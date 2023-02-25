@@ -1,0 +1,335 @@
+using System;
+using System.Collections.Generic;
+
+namespace Dy
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+			int score = 0;
+			string answer = "";
+		
+			
+			do {
+			Random rnd = new Random();
+			int month = rnd.Next(1,13);
+			int day1 = rnd.Next(1,32);
+			int day2 = rnd.Next(1,31);
+			int febday = rnd.Next(1,29);
+			    
+			ShowMainMenu();
+			
+			string userInput = GetUserInput();
+			Console.Clear();
+			
+			if(userInput == "1"){
+				Console.WriteLine("Seasons of the year");
+				Console.WriteLine("--------------------------");
+				Console.WriteLine("1 - Winter");
+				Console.WriteLine("2 - Spring");
+				Console.WriteLine("3 - Summer");
+				Console.WriteLine("4 - Autumn");
+				Console.WriteLine("--------------------------");
+				String season = "";
+				
+				if(month == 1 && day1 >= 1){
+					Console.WriteLine("What Season is January " + day1 + "?");
+					answer = "1"; season = "Winter";
+				}
+				else if(month == 2 && febday >= 1){
+					Console.WriteLine("What Season is February " + febday + "?");
+					answer = "1"; season = "Winter";
+				}
+				else if(month == 3 && day1 >= 1){
+					Console.WriteLine("What Season is March " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 15){
+					answer = "1"; season = "Winter";
+					}
+					else if(day1 >= 16 && day1 <= 31){
+					answer = "2"; season = "Spring";
+					}
+				}
+				else if(month == 4 && day2 >= 1){
+					Console.WriteLine("What Season is April " + day2 + "?");
+					answer = "2"; season = "Spring";
+				}
+				else if(month == 5 && day1 >= 1){
+					Console.WriteLine("What Season is May " + day1 + "?");
+					answer = "2"; season = "Spring";
+				}
+				else if(month == 6 && day2 >= 1){
+					Console.WriteLine("What Season is June " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 15){
+					answer = "2"; season = "Spring";
+					}
+					else if(day2 >= 16 && day2 <= 30){
+					answer = "3"; season = "Summer";
+					}
+				}
+				else if(month == 7 && day1 >= 1){
+					Console.WriteLine("What Season is July " + day1 + "?");
+					answer = "3"; season = "Summer";
+				}
+				
+				else if(month == 8 && day1 >= 1){
+					Console.WriteLine("What Season is August " + day1 + "?");
+					answer = "3"; season = "Summer";
+				}
+				else if(month == 9 && day2 >= 1){
+					Console.WriteLine("What Season is September " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 15){
+					answer = "3"; season = "Summer";
+					}
+					else if(day2 >= 16 && day2 <= 30){
+					answer = "4"; season = "Autumn";
+					}
+				}
+				else if(month == 10 && day1 >= 1){
+					Console.WriteLine("What Season is October " + day1 + "?");
+					answer = "4"; season = "Autumn";
+				}	
+				else if(month == 11 && day2 >= 1){
+					Console.WriteLine("What Season is November " + day2 + "?");
+					answer = "4"; season = "Autumn";
+				}
+				else if(month == 12 && day1 >= 1){
+					Console.WriteLine("What Season is December " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 15){
+					answer = "4"; season = "Autumn";
+					}
+					else if(day1 >= 16 && day1 <= 31){
+					answer = "1"; season = "Winter";
+					}
+				}
+				
+				string useranswer = (Console.ReadLine());
+					if(useranswer == answer){
+						Console.WriteLine("You are Correct!");
+						Console.WriteLine("The Season is " + season + ".");
+					    ++score;
+						Console.ReadKey();
+						Console.Clear();
+						
+					}
+					else{
+						Console.WriteLine("You are Wrong!");
+						Console.WriteLine("The Season is " + season + ".");
+						Console.ReadKey();
+						Console.Clear();
+						
+					}
+				}
+				
+				else if(userInput == "2"){
+				Console.WriteLine("Zodiac Signs");
+				Console.WriteLine("--------------------------");
+				Console.WriteLine("1 - Aries");
+				Console.WriteLine("2 - Taurus");
+				Console.WriteLine("3 - Gemini");
+				Console.WriteLine("4 - Cancer");
+				Console.WriteLine("5 - Leo");
+				Console.WriteLine("6 - Virgo");
+				Console.WriteLine("7 - Libra");
+				Console.WriteLine("8 - Scorpio");
+				Console.WriteLine("9 - Sagittarius");
+				Console.WriteLine("10 - Capricorn");
+				Console.WriteLine("11 - Aquarius");
+				Console.WriteLine("12 - Pisces");
+				Console.WriteLine("--------------------------");
+				String zodiac = "";
+				
+				if(month == 1 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is January " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 20){
+						answer = "10"; zodiac = "Capricorn";
+					}
+					else if(day1 >= 21 && day1 <= 31){
+						answer = "11"; zodiac = "Aquarius";
+					}
+				}
+				else if(month == 2 && febday >= 1){
+					Console.WriteLine("What Zodiac sign is February " + febday + "?");
+					
+					if(febday >= 1 && febday <= 18){
+						answer = "11"; zodiac = "Aquarius";
+					}
+					else if(febday >= 19 && febday <= 29){
+						answer = "12"; zodiac = "Pisces";
+					}
+				}
+				else if(month == 3 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is March " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 20){
+						answer = "12"; zodiac = "Pisces";
+					}
+					else if(day1 >= 21 && day1 <= 31){
+						answer = "1"; zodiac = "Aries";
+					}
+				}
+				else if(month == 4 && day2 >= 1){
+					Console.WriteLine("What Zodiac sign is April " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 20){
+						answer = "1"; zodiac = "Aries";
+					}
+					else if(day2 >= 21 && day2 <= 30){
+						answer = "2"; zodiac = "Taurus";
+					}
+				}
+				else if(month == 5 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is May " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 21){
+						answer = "2"; zodiac = "Taurus";
+					}
+					else if(day1 >= 22 && day1 <= 31){
+						answer = "3"; zodiac = "Gemini";
+					}
+				}
+				else if(month == 6 && day2 >= 1){
+					Console.WriteLine("What Zodiac sign is June " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 21){
+						answer = "3"; zodiac = "Gemini";
+					}
+					else if(day2 >= 22 && day2 <= 30){
+						answer = "4"; zodiac = "Cancer";
+					}
+				}
+				else if(month == 7 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is July " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 23){
+						answer = "4"; zodiac = "Cancer";
+					}
+					else if(day1 >= 24 && day1 <= 31){
+						answer = "5"; zodiac = "Leo";
+					}
+				}
+				else if(month == 8 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is August " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 23){
+						answer = "5"; zodiac = "Leo";
+					}
+					else if(day1 >= 24 && day1 <= 31){
+						answer = "6"; zodiac = "Virgo";
+					}
+				}
+				else if(month == 9 && day2 >= 1){
+					Console.WriteLine("What Zodiac sign is September " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 23){
+						answer = "6"; zodiac = "Virgo";
+					}
+					else if(day2 >= 24 && day2 <= 30){
+						answer = "7"; zodiac = "Libra";
+					}
+				}
+				else if(month == 10 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is October " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 23){
+						answer = "7"; zodiac = "Libra";
+					}
+					else if(day1 >= 24 && day1 <= 31){
+						answer = "8"; zodiac = "Scorpio";
+					}
+				}	
+				else if(month == 11 && day2 >= 1){
+					Console.WriteLine("What Zodiac sign is November " + day2 + "?");
+					
+					if(day2 >= 1 && day2 <= 22){
+						answer = "8"; zodiac = "Scorpio";
+					}
+					else if(day2 >= 23 && day2 <= 30){
+						answer = "9"; zodiac = "Sagittarius";
+					}
+				}
+				else if(month == 12 && day1 >= 1){
+					Console.WriteLine("What Zodiac sign is December " + day1 + "?");
+					
+					if(day1 >= 1 && day1 <= 22){
+						answer = "9"; zodiac = "Sagittarius";
+					}
+					else if(day1 >= 23 && day1 <= 31){
+						answer = "10"; zodiac = "Capricorn";
+					}
+				}
+				
+				string useranswer = (Console.ReadLine());
+					if (useranswer == answer){
+						Console.WriteLine("You are Correct!");
+						Console.WriteLine("The Zodiac sign is " + zodiac + ".");
+						Console.ReadKey();
+						Console.Clear();
+						++score;
+					}
+					else {
+						Console.WriteLine("You are Wrong!");
+						Console.WriteLine("The Zodiac sign is " + zodiac + ".");
+						Console.ReadKey();
+						Console.Clear();
+					}
+				}
+				
+				else if(userInput == "3"){
+					return;
+				}
+				
+				else{
+					Console.WriteLine("Invalid Input.");
+				}	
+				
+			}
+			while(PlayAgain(score));
+        }
+		
+		static void ShowMainMenu(){
+			Console.WriteLine("Pick a Game");
+			Console.WriteLine("--------------------------");
+			Console.WriteLine("1 - Seasons of the year");
+			Console.WriteLine("2 - Zodiac signs");
+			Console.WriteLine("3 - Exit");
+			Console.WriteLine("--------------------------");
+		}
+		
+		static string GetUserInput(){
+			Console.WriteLine("User input: ");
+			string input = (Console.ReadLine());
+			return input;
+		}
+		
+		static bool PlayAgain(int score){
+			while(true){
+			Console.WriteLine("Play Again?");
+			Console.WriteLine("--------------------------");
+			Console.WriteLine("1 - Yes");
+			Console.WriteLine("2 - No");
+			Console.WriteLine("--------------------------");
+			string userInput = GetUserInput();
+				if(userInput == "1"){
+					Console.Clear();
+					return true;
+				}
+				else if(userInput == "2"){
+				    Console.Clear();
+					Console.WriteLine("Score: " + score);
+					return false;
+				}
+				else{
+					Console.Clear();
+					Console.WriteLine("Please choose from the choices below.");
+				}
+		}
+	}
+		
+    }
+}
